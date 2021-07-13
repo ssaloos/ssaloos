@@ -1,9 +1,10 @@
 import random
+import string
 print("Welcome to Tic Tac Toe!")
 XO = [" "," ", " ", " ", " ", " ", " ", " ", " ", " "]
 player_choice = {'X' : "", 'O' : ""}
 def print_tic_tac_toe():
-    print(f"[1] [2] [3]\n[4] [5] [6]\n[7] [8] [9]")
+    print(" ")
 def check_empty():
     empty_index = []
     for index in range(9):
@@ -24,9 +25,8 @@ def check_winner():
     elif player_choice("O") == win_comb:
         print("O wins!")
 # print(check_winner())
-    # winner = single_game(options[choice-1])
+    # winner = xo_game(options[choice-1])
 player = input("Player 1: would you like to be X or O? ")
-print(f"[1] [2] [3]\n[4] [5] [6]\n[7] [8] [9]")
 cur_player = player
 player1 = (" ")
 if cur_player == "X":
@@ -34,8 +34,9 @@ if cur_player == "X":
 elif cur_player == "O":
     player1 = "X"
 print(f"Player 2 (Computer) is : {player1}")
+print(f"[1] [2] [3]\n[4] [5] [6]\n[7] [8] [9]")
 element = int(input(f"Which place would you like to place {player}? "))
-def single_game(cur_player):
+def xo_game(cur_player):
     values = [" " for x in range(9)]
     player_pos = {"X":[ ], "O":[ ]}
     while True:
@@ -73,16 +74,6 @@ def single_game(cur_player):
             cur_player == player1
         else:
             cur_player == player
-# player = input("Player 1: would you like to be X or O? ")
-# print(f"[1] [2] [3]\n[4] [5] [6]\n[7] [8] [9]")
-# cur_player = player
-# player1 = (" ")
-# if cur_player == "X":
-#     player1 = "O"
-# elif cur_player == "O":
-#     player1 = "X"
-# print(f"Player 2 (Computer) is : {player1}")
-# element = int(input(f"Which place would you like to place {player}? "))
 while element >= 1 and element <= 9:
     XO[element - 1] = player
     print(f"[{XO[0]}] [{XO[1]}] [{XO[2]}]\n[{XO[3]}] [{XO[4]}] [{XO[5]}]\n[{XO[6]}] [{XO[7]}] [{XO[8]}]")
